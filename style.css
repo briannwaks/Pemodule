@@ -1,0 +1,602 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* MOBILE STYLES */
+nav {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding:  0 20px;
+    top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+#hero {
+    height: 100vh;
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8)),url("./assets/header-bg.jpg.webp");
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none; /* remove bullet points */
+    display: flex; /* to horizontal */
+    gap: 40px;
+    
+    
+}
+
+nav ul a{
+    color: white;
+    text-decoration: none; /* remove underline */
+}
+
+#hero h4{
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+
+}
+#hero h1{
+    color: white;
+    font-size: 5em;
+    font-weight: lighter;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+#hero a{
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white; /* to add border */
+    padding: 10px; /* space inside elements */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 1opx;
+    border-radius: 99px; /* to get rounded edges */
+
+}
+
+.icon{
+    color: white;
+
+}
+#nav-link-list{
+    display: none;
+
+}
+#hero a:hover{
+    border: none;
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+}
+#section1{
+    display: flex;
+    padding: 20px;
+    gap: 50px;
+    width: 100%;
+    flex-direction: column;
+}
+#column1, #column2{
+    width: 100%;
+}
+#column2 img{
+    width: 100%;
+}
+#column1 h2 {
+    font-weight: lighter;
+    font-size: 3em;
+}
+#bold{
+    font-weight: bold;
+}
+div >p{  /* child selector selcting content in the paragraph */
+    color: grey;
+} 
+#column1 >a{
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 99px;
+    text-decoration: none; 
+    margin-top: 30px;
+    display: block;/* used because margin dosent work on inline element and the child selctor is inline by default */
+    width: fit-content;/* used to take the required width of the container as much as it needs to contain it */
+    
+}
+#column2 > footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2%;
+}
+
+footer > .dot{
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+    border-radius: 99px;
+    cursor: pointer;
+}
+
+#active-dot{
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+    width: 40px;
+}
+
+/* section2 */
+#section2{
+    display: flex;
+    padding: 20px;
+    gap: 50px;
+    background-image: url("./assets/parallux-bg.jpg.webp");
+    background-repeat: no-repeat;/* to prevent repetition */
+    background-size: cover;/* to cover the whole screen */
+    background-attachment: fixed;/* to stop scrooling */
+    color: white;
+    flex-direction: column;
+    
+}
+
+#sect2-col2 h2 {
+    font-weight: lighter;
+    font-size: 3em;
+}
+#sect2-col2 #bold{
+    font-weight: bold;
+}
+#sect2-col2 >p{  /* child selector selcting content in the paragraph */
+    color: white;
+    margin-bottom: 30px;
+}   
+#sect2-col1, #sect2-col2{
+    width: 100%;
+}
+
+#sect2-col2 a{
+    border: 1px solid white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+}
+#sect2-col2 a:hover{
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+    background-color: rgba(128, 0, 128, 0.8);
+}
+
+/* section3 */
+#sect3{
+    padding: 20px;
+}
+#gallery{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+}
+
+#gallery article{
+    width: 100%;
+    position: relative;/* to put the text inro the article/image */
+    border-radius: 20px;
+    overflow: hidden;/* to set overflow to be hidden/make rounded corners inthe gradient background image to work */
+    aspect-ratio: 1/1;
+    
+}
+
+#gallery footer{
+    display: flex;
+    flex-direction: column;/* to move text inside an image to the bottom */
+    justify-content: center; /* to move text inside an image to the bottom */
+    transform: translateY(-100%);/* to rotate ,flip and move elements */
+    
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    transition: transform 300ms linear;/* positioning relative to footerto put the text inro the article/image/ */
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+    color: white;
+    padding: 30px;
+    
+
+}
+
+#gallery article img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* to prevent stretched images */
+    
+    
+}
+
+#gallery article:hover footer{
+    transform: translateY(0%);/* to rotate ,flip and move elements */
+    
+}
+
+#sect4{
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8)) ,url(./assets/slider.jpg.webp) ;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: conver;
+}
+#sect4 >h2{
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    font-weight: lighter;  
+}
+#sect4 >p{
+    text-align: center;
+    color: white;
+}
+#sect4 form{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    justify-items: end;
+}
+
+#sect4 form input, textarea {
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 20px;
+    color: white;
+    width: calc(100% );
+    display: block;
+
+}
+
+#sect4 form input::placeholder,  textarea::placeholder { /* for styling the placeholders */
+    color: white
+}
+
+
+#sect4 form button{
+    border-radius: 30px;
+    padding: 20px;
+    width: fit-content;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    border: none;
+    background-color: white;
+    transition:  all 800ms linear;
+    
+}
+
+#sect4 form button:hover{
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+    color: white;
+    
+}
+
+#sect5{
+    padding: 20px;
+    background-color: rgb(244, 244, 244);
+}
+
+#sect5 h2{
+    text-align: center;
+    color: black;
+    font-size: 3em;
+    font-weight: lighter; 
+    
+}
+
+#sect5 p{
+    text-align: center;
+    color: grey;
+    margin: 50px;
+    
+}
+
+#sect5 form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+#sect5 form div{
+    position: relative;
+
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sect5 form input{
+    
+    border-radius: 30px;
+    padding: 20px;
+    width:100%;
+    display: block;
+    background-color: white;   
+    border: none;
+
+}
+#sect5 form button{
+    border-radius: 30px;
+    padding: 15px;
+    position: absolute ;
+    right: 5px;
+    /* top: 0; */
+    padding-left: 40px;
+    padding-right: 40px;
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+
+
+#sect6{
+    background-color: rgb(48, 45, 45);
+    padding: 20px;
+}
+#sect6 ul {
+    /* margin: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 40px ;   
+    padding: 20px;  
+}
+
+#sect6 ul a{/* explain this part */
+    text-decoration: none;
+    color: white;
+}
+
+#sect6 ul a:hover{
+    color: purple;   
+}
+
+#sect6 h3{
+    
+    color: white;
+    text-align: center;
+    font-weight: lighter;   
+}
+
+#sect6 h3 b{
+    color: purple;
+}
+
+#sect6 h3 b:hover{
+    color: purple;
+}
+
+
+
+
+/* sect7 */
+#sect7{
+    padding: 20px;
+    background-color: #f1f1f1;   
+}
+#sect7 #videos{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+}
+
+#videos article{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* aspect-ratio: 1/1; */
+    border-radius: 10px;
+   
+    height: fit-content;
+    overflow: hidden;
+
+}
+
+#videos article video{
+    width: 100%;    
+}
+#videos footer{
+    padding: 20px;
+    color: #222;
+    padding-top: 0;
+}
+
+#videos footer span{
+    color: #555;
+}
+
+/* section8 */
+#sect8{
+    padding: 20px;
+
+}
+#sect8 table{
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#sect8 table th{
+    text-align: left;
+    padding: 10px
+}
+#sect8 table td{
+    padding: 10px;
+}
+#sect8 table thead{
+    background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+    color: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#sect8 table tr:hover{
+    background-color: #fff;
+}
+
+#sect8 table col{
+    width: 5%;
+}
+
+.slide{
+    display: none;
+}
+#active{
+    display: block;
+}
+
+
+/* *
+************************************************************DESKTOP STYLES***************************************************************************** */
+/* Desktop Styles */
+@media screen and (min-width:768px) {
+
+    nav ul{
+        margin: 0;
+    } 
+
+    #hero h1{
+        font-size: 10em;
+    }
+
+    #section1{
+        flex-direction: row;
+        padding: 150px;
+      
+    }
+    #column1, #column2{
+        width: 50%;
+    }
+    #column2 img{
+        width: 100%;
+    }
+
+
+  
+    
+    /* section2 */
+    #section2{
+        padding: 150px;
+        flex-direction: row;
+        
+    }
+    
+    /* section3 */
+    #sect3{
+        padding: 150px;
+    }
+    #gallery{
+   
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+    
+  
+    
+    #gallery footer{
+        
+        justify-content: flex-end; /* to move text inside an image to the bottom */
+        transform: translateY(-200%);/* to rotate ,flip and move elements */
+        
+       
+    }
+    
+    #gallery article img{
+        width: 100%;
+        height: 100%;
+        
+    }
+    
+  
+    
+    #sect4{
+
+        padding: 150px;
+ 
+    }
+ 
+    #sect4 form{
+       
+        grid-template-columns: repeat(2, 1fr);
+  
+    }
+    
+  
+ 
+    
+    #sect4 form textarea{
+        grid-column: 1/3;/* to make the text area to occupy the whole region */
+    }
+    
+    #sect4 form button{
+     
+        grid-column: 2/3;
+  
+        
+    }
+    
+    #sect4 form button:hover{
+        background-image: linear-gradient(to right,rgba(0, 0, 255, 0.8),rgba(128, 0, 128, 0.8));
+        color: white;
+        
+    }
+    
+    #sect5{
+        padding: 100px;
+      
+    }
+    
+    #sect5 form div{
+        width: 50%;
+    }
+
+
+    #sect6 ul {
+        padding: 60px;  
+    }   
+    
+    /* sect7 */
+#sect7{
+    padding: 150px    
+
+}
+#sect7 #videos{
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+  
+}
